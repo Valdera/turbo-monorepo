@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  sample:
+    container_name: sample
+    build:
+      context: .
+      dockerfile: ./apps/sample/Dockerfile
+      args:
+        PROJECT_NAME: sample
+    restart: always
+    ports:
+      - 3000:3000
