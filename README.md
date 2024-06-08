@@ -3,7 +3,7 @@
 ## Tech stack / tools used
 
 - [x] Turbo Repo
-- [x] Bun
+- [x] Yarn
 - [x] Typescript
 - [x] Next JS (`v14`)
 - [ ] Shadcn
@@ -18,7 +18,7 @@
 - [ ] Lucide
 - [ ] Framer Motion
 - [ ] Next Auth
-- [ ] Commitlint
-- [ ] Husky
+- [x] Commitlint
+- [x] Husky
 - [x] Prettier
 - [x] ESlint (`v8`)
