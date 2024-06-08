@@ -3,7 +3,7 @@
 ## Tech stack / tools used
 
 - [x] Turbo Repo
-- [x] Yarn
+- [x] Yarn (🔜 Bun or Pnpm)
 - [x] Typescript
 - [x] Next JS (`v14`)
 - [ ] Shadcn
@@ -21,7 +21,7 @@
 - [x] Commitlint
 - [x] Husky
 - [x] Prettier
-- [x] ESlint (`v8`)
+- [x] ESlint (`v8`) (🔜 `v9`)
 
 ## Commit Conventions
 
