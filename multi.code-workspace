@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "path": "./",
+    },
+    {
+      "path": "apps/sample",
+    },
+    {
+      "path": "packages/ui",
+    },
+  ],
+  "settings": {
+    "typescript.tsdk": "client/node_modules/typescript/lib",
+  },
+}
