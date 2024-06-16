@@ -6,7 +6,7 @@
 - [x] Yarn (🔜 Bun or Pnpm)
 - [x] Typescript
 - [x] Next JS (`v14`)
-- [ ] Shadcn
+- [ ] Mantine
 - [x] Tailwind
 - [ ] Zustand
 - [ ] TanStack Query
@@ -18,6 +18,7 @@
 - [ ] Lucide
 - [ ] Framer Motion
 - [ ] Next Auth
+- [x] Rollup (`v4`)
 - [x] Commitlint
 - [x] Husky
 - [x] Prettier
