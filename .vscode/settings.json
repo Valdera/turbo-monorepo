@@ -1,7 +1,15 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "typescriptreact"
+  ],
   "editor.codeActionsOnSave": {
+    "source.formatDocument": "always",
     "source.fixAll": "always",
+    "source.fixAll.eslint": "always",
     "source.organizeImports": "always"
   },
   "eslint.workingDirectories": ["./apps/sample", "./packages/ui"]

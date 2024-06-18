@@ -6,7 +6,6 @@ import typescript from '@rollup/plugin-typescript';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
 import { defineConfig } from 'rollup';
-import del from 'rollup-plugin-delete';
 import dts from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
@@ -41,10 +40,12 @@ export default [
         extract: true,
       }),
       commonjs(),
-      del({ targets: './dist/*' }),
       svgr(),
       typescript({
         tsconfig: './tsconfig.json',
+        compilerOptions: {
+          rootDir: 'src',
+        },
         exclude: ['**/*.stories.tsx'],
         allowImportingTsExtensions: false,
         declaration: true,

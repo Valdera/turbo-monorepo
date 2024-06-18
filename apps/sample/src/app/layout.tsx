@@ -1,8 +1,8 @@
+import { ColorSchemeScript } from '@mantine/core';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@repo/ui';
-import { theme } from '@/styles/theme';
-import './globals.scss';
+import ThemeProvider from '@/lib/theme/ThemeProvider';
+import '@/styles/globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,8 +16,14 @@ const RootLayout: React.FC<{
 }> = ({ children }) => {
   return (
     <html lang={'en'}>
+      <head>
+        <ColorSchemeScript
+          defaultColorScheme={"auto"}
+          nonce={"8IBTHwOdqNKAWeKl7plt8g=="}
+        />
+      </head>
       <body className={inter.className}>
-        <ThemeProvider themeConfig={theme}>{children}</ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

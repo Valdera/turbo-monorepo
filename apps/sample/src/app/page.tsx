@@ -1,5 +1,6 @@
 'use client';
 
+import { Button } from '@mantine/core';
 import { SimpleButton } from '@repo/ui';
 
 const Page: React.FC = () => {
@@ -9,6 +10,8 @@ const Page: React.FC = () => {
 
   return (
     <main>
+      <div className="bg-primary-800">sample text:</div>
+      <Button>dfg</Button>
       <SimpleButton onClick={handleOnClick} text={'Test Button'} />
     </main>
   );

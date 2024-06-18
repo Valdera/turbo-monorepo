@@ -1,9 +1,8 @@
-// @ts-ignore
 import sharedConfig from '@repo/tailwind-config';
 import type { Config } from 'tailwindcss';
 
-const config: Pick<Config, 'prefix' | 'presets' | 'content'> = {
-  content: ['./src/**/*.tsx'],
+const config: Config = {
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   presets: [sharedConfig],
 };
 

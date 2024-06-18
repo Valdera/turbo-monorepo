@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
     "types": ["./index.d.ts"]
   },
+  "include": ["."],
   "extends": "@repo/typescript-config/react-library.json",
-  "exclude": ["dist", "build", "node_modules", "*.config.ts"]
+  "exclude": ["dist", "build", "node_modules"]
 }

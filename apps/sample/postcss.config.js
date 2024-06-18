@@ -5,6 +5,5 @@ module.exports = {
     autoprefixer: {},
     'postcss-easy-import': { prefix: '_', extensions: ['.css', '.scss'] },
     'postcss-preset-mantine': {},
-    'postcss-simple-vars': {},
   },
 };
