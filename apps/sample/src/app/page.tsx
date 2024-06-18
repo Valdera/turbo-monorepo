@@ -10,7 +10,7 @@ const Page: React.FC = () => {
 
   return (
     <main>
-      <div className="bg-primary-800">sample text:</div>
+      <div className={'bg-primary-800'}>sample text:</div>
       <Button>dfg</Button>
       <SimpleButton onClick={handleOnClick} text={'Test Button'} />
     </main>

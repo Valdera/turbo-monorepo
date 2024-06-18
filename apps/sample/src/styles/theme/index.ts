@@ -5,7 +5,7 @@ import { defaultTheme } from './default-theme';
 /**
  * Create a theme config with default fallback values
  *
- * @param colors colors configuration
+ * @param colors - colors configuration
  * @returns theme configuration
  */
 const withDefaultFallback = (

@@ -8,7 +8,7 @@ const SimpleButton: React.FC<SimpleButtonProps> = ({ text, onClick }) => {
       className={styles.button}
       color={'blue.2'}
       onClick={onClick}
-      type="button"
+      type={'button'}
     >
       {text}
     </Button>

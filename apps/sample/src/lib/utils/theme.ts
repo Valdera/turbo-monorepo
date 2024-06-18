@@ -55,7 +55,7 @@ export interface FontFamilyConfig {
 /**
  * Convert standard theme configuration to mantine theme configuration
  *
- * @param theme theme configuration
+ * @param theme - theme configuration
  * @returns mantine theme configuration
  */
 export const toMantineTheme = ({
@@ -116,7 +116,7 @@ export const toMantineTheme = ({
 /**
  * Convert standard theme configuration to Tailwind theme configuration
  *
- * @param theme
+ * @param theme - theme configuration
  * @returns tailwind theme configuration
  */
 export const toTailwindTheme = ({
