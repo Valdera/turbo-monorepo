@@ -1,0 +1,16 @@
+.button {
+  @apply flex cursor-pointer items-center justify-center transition-all hover:scale-105;
+}
+
+.icon {
+  width: 50%;
+  height: 50%;
+}
+
+// .dropdown {
+//   @apply bg-background;
+// }
+
+.menuItemSelected {
+  @apply bg-foreground;
+}

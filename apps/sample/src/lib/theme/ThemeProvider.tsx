@@ -2,30 +2,32 @@
 
 import { MantineProvider } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
-import { toMantineTheme } from '@/lib/utils/theme';
-import type {
-  AvailableTheme} from '@/styles/theme';
-import {
-  DEFAULT_THEME_KEY,
-  themeConfigMapping,
-} from '@/styles/theme';
+import type { RefObject } from 'react';
+import { useEffect } from 'react';
 import ThemeContext from './ThemeContext';
+import themeManager from './ThemeManager';
 
-const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
-  const [theme, setTheme] = useLocalStorage<AvailableTheme>({
-    key: 'theme',
-    defaultValue: DEFAULT_THEME_KEY,
+const ThemeProvider: React.FC<{
+  children: React.ReactNode;
+  bodyRef?: RefObject<HTMLBodyElement>;
+}> = ({ children }) => {
+  const [theme, setTheme] = useLocalStorage({
+    key: 'app-theme',
+    getInitialValueInEffect: true,
+    defaultValue: themeManager.getDefaultThemeKey(),
   });
 
-  const themeConfig = themeConfigMapping[theme];
+  useEffect(() => {
+    document.body.setAttribute('data-theme', `${theme}-theme`);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <MantineProvider
-        defaultColorScheme={"auto"}
-        theme={toMantineTheme(themeConfig)}
+        defaultColorScheme={themeManager.getThemeCategory(theme)}
+        theme={themeManager.getMantineTheme(theme)}
+        withCssVariables={false}
+        withGlobalClasses={false}
       >
         {children}
       </MantineProvider>

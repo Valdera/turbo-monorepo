@@ -1,3 +1,7 @@
-.header {
-  @apply bg-primary-300 border-b border-gray-300 p-4;
+.container {
+  @apply bg-background min-h-[100vh];
+}
+
+.highlight {
+  @apply bg-primary-800 text-primary-200 inline-block rounded-md px-3 py-0.5 opacity-80;
 }

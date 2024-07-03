@@ -1,4 +1,4 @@
-import type { ColorsConfig } from '@/lib/utils/theme';
+import type { ColorsConfig } from '@/lib/types';
 
 const theme: ColorsConfig = {
   primary: {
@@ -27,8 +27,8 @@ const theme: ColorsConfig = {
     900: '#2b002b',
     950: '#1a001a',
   },
-  background: '#e4e6ed',
-  foreground: '#f3f3fe',
+  background: '#4a5167',
+  foreground: '#3c3f5c',
 };
 
 export default theme;

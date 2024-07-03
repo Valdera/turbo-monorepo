@@ -1,8 +1,7 @@
 import sharedConfig from '@repo/tailwind-config';
 import type { Config } from 'tailwindcss';
 import createThemes from 'tailwindcss-themer';
-import { toTailwindTheme } from './src/lib/utils/theme';
-import { DEFAULT_THEME_KEY, themeConfigMapping } from './src/styles/theme';
+import { themeManager } from './src/lib/theme';
 
 const config: Config = {
   content: [
@@ -14,11 +13,14 @@ const config: Config = {
   plugins: [
     createThemes({
       defaultTheme: {
-        extend: toTailwindTheme(themeConfigMapping[DEFAULT_THEME_KEY]),
+        extend: themeManager.getTailwindTheme(
+          themeManager.getDefaultThemeKey()
+        ),
       },
-      themes: Object.entries(themeConfigMapping).map(([key, config]) => ({
-        name: key,
-        extend: toTailwindTheme(config),
+      themes: themeManager.getThemeEntries().map((entry) => ({
+        name: `${entry.key}-theme`,
+        selectors: [`[data-theme="${entry.key}-theme"]`],
+        extend: themeManager.getTailwindTheme(entry.key),
       })),
     }),
   ],

@@ -74,5 +74,11 @@ module.exports = {
       },
     ],
     'no-console': 'warn',
+    '@typescript-eslint/no-explicit-any': [
+      'warn',
+      {
+        ignoreRestArgs: true,
+      },
+    ],
   },
 };

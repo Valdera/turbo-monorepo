@@ -1,9 +1,14 @@
 'use client';
 
 import { createContext } from 'react';
-import type { AvailableTheme } from '@/styles/theme';
+import themeManager from './ThemeManager';
 
 export default createContext<{
-  theme: AvailableTheme;
-  setTheme: (theme: AvailableTheme) => void;
-} | null>(null);
+  theme: string;
+  setTheme: (theme: string) => void;
+}>({
+  theme: themeManager.getDefaultThemeKey(),
+  setTheme: () => {
+    // do nothing
+  },
+});

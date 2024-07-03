@@ -1,7 +1,5 @@
 {
-  "compilerOptions": {
-    "types": ["./index.d.ts"]
-  },
+  "compilerOptions": {},
   "include": ["."],
   "extends": "@repo/typescript-config/react-library.json",
   "exclude": ["dist", "build", "node_modules"]
