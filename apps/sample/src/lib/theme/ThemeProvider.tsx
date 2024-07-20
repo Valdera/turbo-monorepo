@@ -18,7 +18,7 @@ const ThemeProvider: React.FC<{
   });
 
   useEffect(() => {
-    document.body.setAttribute('data-theme', `${theme}-theme`);
+    document.body.setAttribute('data-theme', theme);
   }, [theme]);
 
   return (

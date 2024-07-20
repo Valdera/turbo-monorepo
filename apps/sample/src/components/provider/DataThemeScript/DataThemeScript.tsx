@@ -17,7 +17,7 @@ const getScript = ({
   if (_computedTheme === null || _computedTheme === undefined) {
     _computedTheme = "${defaultTheme}";
   }
-  document.documentElement.setAttribute("data-theme", _computedTheme.replaceAll('"', "") + "-theme");`;
+  document.documentElement.setAttribute("data-theme", _computedTheme.replaceAll('"', ""));`;
 };
 
 const DataThemeScript: React.FC<DataThemeScriptProps> = ({

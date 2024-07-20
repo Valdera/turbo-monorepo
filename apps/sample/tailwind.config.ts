@@ -19,7 +19,7 @@ const config: Config = {
       },
       themes: themeManager.getThemeEntries().map((entry) => ({
         name: `${entry.key}-theme`,
-        selectors: [`[data-theme="${entry.key}-theme"]`],
+        selectors: [`[data-theme="${entry.key}"]`],
         extend: themeManager.getTailwindTheme(entry.key),
       })),
     }),
