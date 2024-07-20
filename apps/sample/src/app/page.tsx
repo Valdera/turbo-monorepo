@@ -15,7 +15,7 @@ const Page: React.FC = () => {
       >
         <Title mb={'lg'}>
           Change application <span className={style.highlight}>theme</span> here{' '}
-          <ThemeSwitchButton className={'inline-block'} />{' '}
+          <ThemeSwitchButton className={'inline-block'} />
         </Title>
       </Flex>
     </main>

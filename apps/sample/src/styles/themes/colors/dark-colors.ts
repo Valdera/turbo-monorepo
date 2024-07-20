@@ -1,4 +1,4 @@
-import type { ColorsConfig } from '@/lib/types';
+import type { ColorsConfig } from '@repo/theme';
 
 const theme: ColorsConfig = {
   primary: {
@@ -27,13 +27,13 @@ const theme: ColorsConfig = {
     900: '#2b002b',
     950: '#1a001a',
   },
-  background: '#e4e6ed',
-  foreground: '#f3f3fe',
-  cardBackground: '#ffffff',
-  menuBackground: '#ffffff',
-  menuItemBackground: '#ffffff',
-  menuItemActiveBackground: '#f3f3fe',
-  inputBackground: '#ffffff',
+  background: '#4a5167',
+  foreground: '#3c3f5c',
+  cardBackground: '#4a5167',
+  menuBackground: '#4a5167',
+  menuItemBackground: '#4a5167',
+  menuItemActiveBackground: '#3c3f5c',
+  inputBackground: '#4a5167',
 };
 
 export default theme;

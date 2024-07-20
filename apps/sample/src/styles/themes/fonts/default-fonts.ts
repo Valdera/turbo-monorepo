@@ -1,4 +1,4 @@
-import type { FontFamilyConfig } from '@/lib/types';
+import type { FontFamilyConfig } from '@repo/theme';
 
 export default {
   heading: 'Inter, sans-serif',

@@ -1,12 +1,10 @@
 import { ColorSchemeScript } from '@mantine/core';
 import '@mantine/core/styles.css';
+import { DataThemeScript, ThemeProvider } from '@repo/theme';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import DataThemeScript from '@/components/provider/DataThemeScript/DataThemeScript';
-import ThemeProvider from '@/lib/theme/ThemeProvider';
+import '@repo/ui/dist/index.css';
 import '@/styles/globals.scss';
-
-const inter = Inter({ subsets: ['latin'] });
+import themes from '@/styles/themes';
 
 export const metadata: Metadata = {
   title: 'Create Turborepo',
@@ -36,7 +34,7 @@ const RootLayout: React.FC<{
         />
       </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider themeMapping={themes}>{children}</ThemeProvider>
       </body>
     </html>
   );

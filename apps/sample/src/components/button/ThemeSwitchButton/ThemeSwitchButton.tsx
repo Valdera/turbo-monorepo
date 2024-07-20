@@ -1,18 +1,17 @@
 import type { ActionIconProps } from '@mantine/core';
-import { ActionIcon, Menu, useMantineColorScheme } from '@mantine/core';
+import { ActionIcon, Menu } from '@mantine/core';
+import type { ThemeEntry } from '@repo/theme';
+import { ThemeContext } from '@repo/theme';
 import { IconBrush } from '@tabler/icons-react';
 import { useContext } from 'react';
-import { themeManager } from '@/lib/theme';
-import ThemeContext from '@/lib/theme/ThemeContext';
-import { cn } from '@/lib/utils';
+import { cn } from '@/libs/utils';
 import style from './ThemeSwitchButton.module.scss';
 
 const ThemeSwitchButton: React.FC<ActionIconProps> = ({
   size = 'xl',
   ...props
 }) => {
-  const { theme, setTheme } = useContext(ThemeContext);
-  const { setColorScheme } = useMantineColorScheme();
+  const { theme, themeEntries, setTheme } = useContext(ThemeContext);
 
   return (
     <Menu shadow={'md'} width={200}>
@@ -29,7 +28,7 @@ const ThemeSwitchButton: React.FC<ActionIconProps> = ({
         </ActionIcon>
       </Menu.Target>
       <Menu.Dropdown className={style.dropdown}>
-        {themeManager.getThemeEntries().map((entry) => (
+        {themeEntries.map((entry: ThemeEntry) => (
           <Menu.Item
             className={cn(
               style.menuItem,
@@ -38,7 +37,6 @@ const ThemeSwitchButton: React.FC<ActionIconProps> = ({
             key={entry.key}
             onClick={() => {
               setTheme(entry.key);
-              setColorScheme(entry.category);
             }}
           >
             {entry.name}

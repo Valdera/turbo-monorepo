@@ -92,12 +92,10 @@ export interface ThemeEntry {
   name: string;
   key: string;
   category: 'dark' | 'light';
-  colors: ColorsConfig;
+  config: ThemeConfig;
 }
 
 export interface ThemeMapping {
-  defaultTheme: string;
+  defaultTheme: ThemeEntry;
   themes: ThemeEntry[];
-  fontFamily: FontFamilyConfig;
-  breakpoints: BreakpointsConfig;
 }

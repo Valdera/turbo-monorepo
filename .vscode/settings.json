@@ -12,5 +12,9 @@
     "source.fixAll.eslint": "always",
     "source.organizeImports": "always"
   },
-  "eslint.workingDirectories": ["./apps/sample", "./packages/ui"]
+  "eslint.workingDirectories": [
+    "./apps/sample",
+    "./packages/ui",
+    "./packages/theme"
+  ]
 }

@@ -1,4 +1,4 @@
-import type { BreakpointsConfig } from '@/lib/types';
+import type { BreakpointsConfig } from '@repo/theme';
 
 export default {
   xs: '576px',

@@ -1,68 +1,35 @@
 import { type MantineThemeOverride, createTheme, em } from '@mantine/core';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
-import type {
-  BreakpointsConfig,
-  ColorsConfig,
-  FontFamilyConfig,
-  ThemeConfig,
-  ThemeEntry,
-  ThemeMapping,
-} from '@/lib/types';
-import mapping from '../../styles/themes';
+import type { ThemeConfig, ThemeEntry, ThemeMapping } from '@/libs/types';
 
 class ThemeManager {
-  private defaultThemeKey: string;
+  private static DEFAULT_THEME_KEY = 'default';
 
-  private themeConfigMapping: Map<string, ThemeConfig>;
+  private defaultThemeEntry: ThemeEntry;
 
-  private themeCategoryMapping: Map<string, 'dark' | 'light'>;
-
-  private themeEntries: ThemeEntry[];
+  private themeEntryMap: Map<string, ThemeEntry>;
 
   constructor(themeMaping: ThemeMapping) {
-    this.themeConfigMapping = new Map(
-      themeMaping.themes.map((entry) => [
-        entry.key,
-        this.withDefaultTheme(
-          entry.colors,
-          themeMaping.fontFamily,
-          themeMaping.breakpoints
-        ),
-      ])
+    this.defaultThemeEntry = themeMaping.defaultTheme;
+    this.themeEntryMap = new Map(
+      themeMaping.themes.map((entry) => [entry.key, entry])
     );
-
-    this.themeCategoryMapping = new Map(
-      themeMaping.themes.map((entry) => [entry.key, entry.category])
-    );
-
-    this.themeEntries = themeMaping.themes;
-    this.defaultThemeKey = themeMaping.defaultTheme;
   }
 
-  public getDefaultThemeKey(): string {
-    return this.defaultThemeKey;
+  public static getDefaultThemeKey(): string {
+    return this.DEFAULT_THEME_KEY;
   }
 
   public getTheme(theme: string): ThemeConfig {
-    const config = this.themeConfigMapping.get(theme);
-    if (config === undefined) {
-      throw new Error(`Theme ${theme} not found`);
-    }
-
-    return config;
+    return this.getThemeEntry(theme).config;
   }
 
   public getThemeCategory(theme: string): 'dark' | 'light' {
-    const category = this.themeCategoryMapping.get(theme);
-    if (category === undefined) {
-      throw new Error(`Theme ${theme} not found`);
-    }
-
-    return category;
+    return this.getThemeEntry(theme).category;
   }
 
   public getThemeEntries(): ThemeEntry[] {
-    return this.themeEntries;
+    return Array.from(this.themeEntryMap.values());
   }
 
   public getMantineTheme(theme: string): MantineThemeOverride {
@@ -71,6 +38,19 @@ class ThemeManager {
 
   public getTailwindTheme(theme: string): Partial<CustomThemeConfig> {
     return this.toTailwindTheme(this.getTheme(theme));
+  }
+
+  private getThemeEntry(theme: string): ThemeEntry {
+    if (theme === ThemeManager.DEFAULT_THEME_KEY) {
+      return this.defaultThemeEntry;
+    }
+
+    const entry = this.themeEntryMap.get(theme);
+    if (entry === undefined) {
+      throw new Error(`Theme ${theme} not found`);
+    }
+
+    return entry;
   }
 
   /**
@@ -199,24 +179,6 @@ class ThemeManager {
       },
     };
   }
-
-  /**
-   * Create a theme config with default font family and breakpoints
-   *
-   * @param colors - colors configuration
-   * @returns theme configuration
-   */
-  private withDefaultTheme(
-    colors: ColorsConfig,
-    defaultFontFamily: FontFamilyConfig,
-    defaultBreakpoints: BreakpointsConfig
-  ): ThemeConfig {
-    return {
-      fontFamily: defaultFontFamily,
-      breakpoints: defaultBreakpoints,
-      colors,
-    };
-  }
 }
 
-export default new ThemeManager(mapping);
+export default ThemeManager;

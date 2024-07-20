@@ -4,14 +4,12 @@ import { type SimpleButtonProps } from './SimpleButton.type';
 
 const SimpleButton: React.FC<SimpleButtonProps> = ({ text, onClick }) => {
   return (
-    <Button
-      className={styles.button}
-      color={'blue.2'}
-      onClick={onClick}
-      type={'button'}
-    >
-      {text}
-    </Button>
+    <>
+      <button className={styles.button}> {text}</button>
+      <Button color={'blue.2'} onClick={onClick} type={'button'}>
+        {text}
+      </Button>
+    </>
   );
 };
 
