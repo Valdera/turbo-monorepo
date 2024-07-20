@@ -29,6 +29,11 @@ const theme: ColorsConfig = {
   },
   background: '#4a5167',
   foreground: '#3c3f5c',
+  cardBackground: '#ffffff',
+  menuBackground: '#ffffff',
+  menuItemBackground: '#ffffff',
+  menuItemActiveBackground: '#f3f3fe',
+  inputBackground: '#ffffff',
 };
 
 export default theme;
