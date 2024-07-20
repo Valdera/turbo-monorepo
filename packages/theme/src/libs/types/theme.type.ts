@@ -48,6 +48,11 @@ export interface ColorsConfig {
   };
 
   /**
+   * Primary Font color
+   */
+  bodyFontColor: string;
+
+  /**
    * Background color
    */
   background: string;

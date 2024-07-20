@@ -7,6 +7,10 @@
   height: 50%;
 }
 
-.menuItemSelected {
-  @apply bg-foreground;
+.dropdown {
+  @apply bg-menu-background;
+}
+
+.menuItem {
+  @apply hover:bg-menu-item-active-background;
 }

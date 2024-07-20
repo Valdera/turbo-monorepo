@@ -25,8 +25,6 @@ const ThemeProvider: React.FC<{
     <MantineProvider
       defaultColorScheme={themeManager.getThemeCategory(theme)}
       theme={themeManager.getMantineTheme(theme)}
-      withCssVariables={false}
-      withGlobalClasses={false}
     >
       <ThemeContextProviderWrapper
         setTheme={setTheme}

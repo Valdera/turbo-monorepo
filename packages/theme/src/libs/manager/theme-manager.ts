@@ -77,7 +77,6 @@ class ThemeManager {
           colors.primary[700],
           colors.primary[800],
           colors.primary[900],
-          colors.primary[950],
         ],
         secondary: [
           colors.secondary[50],
@@ -90,7 +89,6 @@ class ThemeManager {
           colors.secondary[700],
           colors.secondary[800],
           colors.secondary[900],
-          colors.secondary[950],
         ],
       },
       primaryColor: 'primary',
@@ -165,6 +163,7 @@ class ThemeManager {
         'menu-item-background': colors.menuItemBackground,
         'menu-item-active-background': colors.menuItemActiveBackground,
         'input-background': colors.inputBackground,
+        'body-font-color': colors.bodyFontColor,
       },
       screens: {
         xs: breakpoints.xs,

@@ -38,6 +38,10 @@ img {
   user-select: none;
 }
 
+text {
+  @apply text-body-font-color;
+}
+
 button {
   color: inherit;
 }
